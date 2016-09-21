@@ -1,0 +1,29 @@
+{
+  "name": "kth-node-ldap",
+  "version": "0.0.0",
+  "description": "Adds a Promise-based API on top of ldapjs as well as a filter builder.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape \"tests/**/*-tests.js\" | faucet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:KTH/kth-node-ldap.git"
+  },
+  "keywords": [
+    "ldap",
+    "ldapjs",
+    "promise",
+    "filter"
+  ],
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.0.1",
+    "ldapjs": "^1.0.0"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.6.0"
+  }
+}
