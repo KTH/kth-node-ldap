@@ -26,3 +26,8 @@ test('filter from array', function (t) {
   t.equal(filters.orAll(attribute, values).build(), '(|(foo=bar)(foo=baz)(foo=qux))')
   t.equal(filters.andAll(attribute, values).build(), '(&(foo=bar)(foo=baz)(foo=qux))')
 })
+
+test('filter raw', function (t) {
+  t.plan(1)
+  t.equal(filters.raw('(foo=bar)').and(filters.eq('foo', 'baz')).build(), '(&(foo=bar)(foo=baz))')
+})
