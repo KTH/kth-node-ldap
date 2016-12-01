@@ -1,4 +1,4 @@
-# kth-node-ldap
+# kth-node-ldap [![Build Status](https://travis-ci.org/KTH/kth-node-ldap.svg?branch=master)](https://travis-ci.org/KTH/kth-node-ldap)
 
 Convenience library on top of the [ldapjs][ldapjs] client.
 
