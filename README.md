@@ -4,7 +4,7 @@ Convenience library on top of the [ldapjs][ldapjs] client.
 
 [ldapjs]: http://ldapjs.org/client.html
 
-## Example
+## Code Example
 
 It's highly recommended that you use [co][co] with this library.
 
