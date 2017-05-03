@@ -4,7 +4,10 @@
   "description": "Adds a Promise-based API on top of ldapjs as well as a filter builder.",
   "main": "index.js",
   "scripts": {
-    "test": "tape \"tests/**/*-tests.js\" | faucet"
+    "test": "tape \"tests/**/*-tests.js\" | faucet",
+    "codecheck": "standard",
+    "preversion": "npm run codecheck && npm run test",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -16,15 +19,18 @@
     "promise",
     "filter"
   ],
-  "private": true,
   "license": "MIT",
   "dependencies": {
     "async": "^2.0.1",
-    "kth-node-log": "^2.0.3",
     "ldapjs": "^1.0.0"
+  },
+  "peerDependencies": {
+    "kth-node-log": "^2.0.3"
   },
   "devDependencies": {
     "faucet": "0.0.1",
+    "kth-node-log": "^2.0.3",
+    "standard": "^10.0.2",
     "tape": "^4.6.0"
   }
 }

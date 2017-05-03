@@ -1,3 +1,11 @@
 language: node_js
 node_js:
-  - "6.1"
+- '6.1'
+deploy:
+  provider: npm
+  email: webmaster-private@kth.se
+  api_key:
+    secure: gegtiNi0g38xT5gG3LrC0ykpq3aM5nf88WpFxgMtOiFDeWiyWNOiG6snF+kOygGy/jkdPBPa/Mhx0Gw+MvDHLS2vBi1tdbGdlK3RE+Z+QvqfXzMgJAfK8B5E+F/r7enFz8m6gs0Y139jkNv3Bhl38P+Qua8BhgosNxwTEL0MckWcUhFv1MqlNHqBGKn0LQ/nD9GxOhzkSArGgtBywWskcFgE0oP6pJEvvQ13UHiaiNDb9QKmPHvjR/RPPv+xUCxluSU5AaLoeM+hELz+5CcjoxGNn8rGK6zCSmxtjknJ9VuIt0DaxqsM+hhqlMevLa6MGMVgK1jduaW7ygPmwdZP2Hkin1GU3QDP2ZERf1X0cZtBRpujpTW4EffLgfLhe5/1VuV8DxXrMpoSiKkNFvDJV29eKNieG3CZhRdsKVp4Dt6M5/N0w73ICCjeClmpWmIn9VwJbLXFi5gKa18hkYIJiPtFPhMbCn8Ha3i2XWPZq21HE+BxoG08q5aDMzy7uDn3CO5kzfqGtfsxS1uXPSs9LWXKC5eTLZbKU0KrPP//jGBqJZ5yKksVNFYpwffBCNbbHiXtUOZlzYHjRwBflcG6Jv7TpmkoYZgz01eIlVTlsC2xEd4SjgQL6+3TdoBGcIX5m5XR+KaIW8i0pE3+7h+vUGzmlKCnsVT++3cbx+5Jcjw=
+  on:
+    tags: true
+    repo: KTH/kth-node-ldap
