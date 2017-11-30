@@ -25,4 +25,3 @@ test('getGroupErrors', function (t) {
   })
   t.equal(getGroups(ldapUserWithEmptyGroups).length, 0)
 })
-
