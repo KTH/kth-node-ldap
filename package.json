@@ -1,6 +1,6 @@
 {
   "name": "kth-node-ldap",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "Adds a Promise-based API on top of ldapjs as well as a filter builder.",
   "main": "index.js",
   "scripts": {
