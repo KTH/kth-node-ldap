@@ -2,3 +2,4 @@ node_modules
 .idea
 temp.js
 package-lock.json
+.vscode
