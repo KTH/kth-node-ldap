@@ -11,7 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:KTH/kth-node-ldap.git"
+    "url": "https://github.com/KTH/kth-node-ldap.git"
+  },
+  "author": {
+    "name": "KTH",
+    "email": "infosys@kth.se",
+    "url": "https://github.com/KTH"
   },
   "keywords": [
     "ldap",
