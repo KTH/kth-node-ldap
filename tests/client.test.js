@@ -3,6 +3,7 @@
 
 const expect = require('chai').expect
 const mockery = require('mockery')
+const ldap = require('ldapjs')
 const EventEmitter = require('events')
 
 const eventEmitter = new EventEmitter().setMaxListeners(20)
@@ -79,10 +80,10 @@ describe('Client', () => {
     test.initClient({ test: 'test' })
     const client = createClient({ test: 'test' })
 
-    eventEmitter.emit('error', { code: 'ECONNRESET' })
+    eventEmitter.emit('error', new ldap.TimeoutError('ECONNRESET'))
 
     expect(client.isOk()).to.equal(false)
-    expect(client.errorMsg().code).to.equal('ECONNRESET')
+    expect(client.errorMsg().message).to.equal('ECONNRESET')
 
     done()
   })
@@ -91,10 +92,10 @@ describe('Client', () => {
     test.initClient({ test: 'test' })
     const client = createClient({ test: 'test' })
 
-    eventEmitter.emit('error', { code: 'ETIMEDOUT' })
+    eventEmitter.emit('error', new ldap.TimeoutError('ETIMEDOUT'))
 
     expect(client.isOk()).to.equal(false)
-    expect(client.errorMsg().code).to.equal('ETIMEDOUT')
+    expect(client.errorMsg().message).to.equal('ETIMEDOUT')
 
     done()
   })
@@ -103,10 +104,10 @@ describe('Client', () => {
     test.initClient({ test: 'test' })
     const client = createClient({ test: 'test' })
 
-    eventEmitter.emit('error', { code: 'ESOCKETTIMEDOUT' })
+    eventEmitter.emit('error', new ldap.TimeoutError('ESOCKETTIMEDOUT'))
 
     expect(client.isOk()).to.equal(false)
-    expect(client.errorMsg().code).to.equal('ESOCKETTIMEDOUT')
+    expect(client.errorMsg().message).to.equal('ESOCKETTIMEDOUT')
 
     done()
   })
@@ -115,10 +116,10 @@ describe('Client', () => {
     test.initClient({ test: 'test' })
     const client = createClient({ test: 'test' })
 
-    eventEmitter.emit('error', 'InvalidCredentialsError')
+    eventEmitter.emit('error', new ldap.InvalidCredentialsError())
 
     expect(client.isOk()).to.equal(false)
-    expect(client.errorMsg()).to.equal('InvalidCredentialsError')
+    expect(client.errorMsg().message).to.equal('InvalidCredentialsError')
 
     done()
   })
