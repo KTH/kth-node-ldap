@@ -237,7 +237,7 @@ describe('Client', () => {
 
     client.search().then(res => {
       expect(res.constructor.name).to.equal('SearchResult')
-      expect(unbindCount).to.equal(5)
+      expect(unbindCount).to.equal(4)
       done()
     })
   })
@@ -257,7 +257,7 @@ describe('Client', () => {
     client.testSearch(opts).then(res => {
       expect(res.isOk).to.be.true
       expect(res.msg).to.be.undefined
-      expect(unbindCount).to.equal(6)
+      expect(unbindCount).to.equal(5)
       done()
     })
 
@@ -278,7 +278,7 @@ describe('Client', () => {
 
     client.testSearch(opts).catch(e => {
       expect(e).to.equal('error')
-      expect(unbindCount).to.equal(7)
+      expect(unbindCount).to.equal(6)
       done()
     })
 
