@@ -7,6 +7,7 @@ const expect = require('chai').expect
 const mockery = require('mockery')
 const EventEmitter = require('events')
 const SearchResult = require('../lib/ldap/search-result')
+
 const eventEmitter = new EventEmitter().setMaxListeners(20)
 
 let unbindCount = 0
