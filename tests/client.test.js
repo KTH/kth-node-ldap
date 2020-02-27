@@ -1,5 +1,7 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-multi-assign */
 
 const expect = require('chai').expect
 const mockery = require('mockery')
@@ -22,7 +24,7 @@ mockery.registerMock('ldapjs', {
     eventEmitter.search = (base, query, cb) => cb(null, resultEmitter)
 
     return eventEmitter
-  }
+  },
 })
 
 const mockLogger = {}
@@ -31,7 +33,7 @@ mockery.registerMock('kth-node-log', mockLogger)
 
 mockery.enable({
   warnOnUnregistered: false,
-  warnOnReplace: false
+  warnOnReplace: false,
 })
 
 const { createClient, test } = require('../lib/ldap/client')
@@ -251,7 +253,7 @@ describe('Client', () => {
       sizeLimits: 0,
       timeLimit: 0,
       filterReplaceHolder: '',
-      kthId: ''
+      kthId: '',
     }
 
     client.testSearch(opts).then(res => {
@@ -273,7 +275,7 @@ describe('Client', () => {
       sizeLimits: 0,
       timeLimit: 0,
       filterReplaceHolder: '',
-      kthId: ''
+      kthId: '',
     }
 
     client.testSearch(opts).catch(e => {

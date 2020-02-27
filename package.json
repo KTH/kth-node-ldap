@@ -7,7 +7,9 @@
     "test": "mocha tests/** --exit",
     "codecheck": "standard",
     "postversion": "git push && git push --tags",
-    "build": "./build.sh"
+    "build": "./build.sh",
+    "lint": "eslint \"**/*.{js,jsx}\" --quiet",
+    "lint-v": "eslint \"**/*.{js,jsx}\" "
   },
   "repository": {
     "type": "git",
@@ -27,7 +29,8 @@
   "license": "MIT",
   "dependencies": {
     "async": "^2.0.1",
-    "ldapjs": "^1.0.0"
+    "ldapjs": "^1.0.0",
+    "ldapts": "^2.2.0"
   },
   "peerDependencies": {
     "kth-node-log": "^3.0.1"
@@ -40,13 +43,88 @@
     "standard": "^10.0.2",
     "husky": "^1.3.1",
     "prettier": "^1.16.4",
-    "pretty-quick": "1.10.0"
+    "pretty-quick": "1.10.0",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3"
   },
   "prettier": {
     "trailingComma": "es5",
     "tabWidth": 2,
     "semi": false,
     "singleQuote": true,
-    "printWidth": 120
+    "printWidth": 140
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test",
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2018,
+      "ecmaFeatures": {
+        "classes": true,
+        "impliedStrict": true
+      }
+    },
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "airbnb",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "import/newline-after-import": [
+        "error",
+        {
+          "count": 0
+        }
+      ],
+      "prettier/prettier": [
+        "error"
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "global-require": "off",
+      "prefer-template": "off",
+      "import/order": "off",
+      "no-plusplus": "off",
+      "no-restricted-syntax": "off",
+      "no-await-in-loop": "off",
+      "sort-imports": [
+        "error",
+        {
+          "ignoreCase": true,
+          "ignoreDeclarationSort": true,
+          "ignoreMemberSort": true,
+          "memberSyntaxSortOrder": [
+            "all",
+            "single",
+            "multiple",
+            "none"
+          ]
+        }
+      ],
+      "no-param-reassign": [
+        "error",
+        {
+          "props": false
+        }
+      ],
+      "strict": "off"
+    }
   }
 }

@@ -1,5 +1,6 @@
 /* eslint-env mocha */
 /* eslint-disable no-unused-expressions */
+/* eslint-disable prefer-destructuring */
 
 const expect = require('chai').expect
 const filters = require('../lib/filters')
@@ -26,8 +27,18 @@ describe('Filters', () => {
   })
 
   it('filter or/and', done => {
-    expect(filters.eq('foo', 'bar').or(filters.eq('foo', 'baz')).build()).to.equal('(|(foo=bar)(foo=baz))')
-    expect(filters.eq('foo', 'bar').and(filters.eq('qux', 'bar')).build()).to.equal('(&(foo=bar)(qux=bar))')
+    expect(
+      filters
+        .eq('foo', 'bar')
+        .or(filters.eq('foo', 'baz'))
+        .build()
+    ).to.equal('(|(foo=bar)(foo=baz))')
+    expect(
+      filters
+        .eq('foo', 'bar')
+        .and(filters.eq('qux', 'bar'))
+        .build()
+    ).to.equal('(&(foo=bar)(qux=bar))')
     done()
   })
 
@@ -41,7 +52,12 @@ describe('Filters', () => {
   })
 
   it('filter raw', done => {
-    expect(filters.raw('(foo=bar)').and(filters.eq('foo', 'baz')).build()).to.equal('(&(foo=bar)(foo=baz))')
+    expect(
+      filters
+        .raw('(foo=bar)')
+        .and(filters.eq('foo', 'baz'))
+        .build()
+    ).to.equal('(&(foo=bar)(foo=baz))')
     done()
   })
 })
