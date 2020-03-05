@@ -1,11 +1,13 @@
 {
   "name": "kth-node-ldap",
-  "version": "3.0.8",
+  "version": "3.1.0",
   "description": "Adds a Promise-based API on top of ldapjs as well as a filter builder.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/** --exit",
-    "codecheck": "standard",
+    "test:mocha": "mocha tests/__mocha_tests__/** --exit",
+    "test": "is-ci \"test:jest\" \"test:watch\"",
+    "test:jest": "mocha tests/__mocha_tests__/** --exit && jest",
+    "test:watch": "mocha tests/__mocha_tests__/** --exit && jest --watch",
     "postversion": "git push && git push --tags",
     "build": "./build.sh",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
@@ -49,7 +51,9 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.3"
+    "eslint-plugin-react": "^7.18.3",
+    "is-ci-cli": "^2.0.0",
+    "jest": "^24.9.0"
   },
   "prettier": {
     "trailingComma": "es5",
@@ -60,7 +64,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run test",
+      "pre-push": "CI=1 npm run test",
       "pre-commit": "pretty-quick --staged"
     }
   },
@@ -91,12 +95,19 @@
         "error",
         "never"
       ],
-      "global-require": "off",
-      "prefer-template": "off",
-      "import/order": "off",
-      "no-plusplus": "off",
-      "no-restricted-syntax": "off",
-      "no-await-in-loop": "off",
+      "global-require": 0,
+      "prefer-template": 0,
+      "import/order": 0,
+      "no-plusplus": 0,
+      "no-restricted-syntax": 0,
+      "no-await-in-loop": 1,
+      "no-useless-catch": 1,
+      "for-direction": 0,
+      "getter-return": 0,
+      "no-async-promise-executor": 1,
+      "no-misleading-character-class": 1,
+      "lines-between-class-members": 0,
+      "prefer-object-spread": 1,
       "sort-imports": [
         "error",
         {
@@ -117,7 +128,7 @@
           "props": false
         }
       ],
-      "strict": "off"
+      "strict": 0
     }
   }
 }

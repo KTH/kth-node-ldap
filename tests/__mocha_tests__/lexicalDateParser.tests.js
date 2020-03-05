@@ -3,7 +3,7 @@
 /* eslint-disable prefer-destructuring */
 
 const expect = require('chai').expect
-const parser = require('../lib/utils/lexical-date-parser')
+const parser = require('../../lib/utils/lexical-date-parser')
 
 describe('Lexical date parser', () => {
   it('date parser, from date', done => {

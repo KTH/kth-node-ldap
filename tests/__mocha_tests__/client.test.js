@@ -36,7 +36,7 @@ mockery.enable({
   warnOnReplace: false,
 })
 
-const { createClient, test } = require('../lib/ldap/client')
+const { createClient, test } = require('../../lib/ldap/client')
 
 describe('Client', () => {
   it('Create client', done => {

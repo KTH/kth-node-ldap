@@ -3,7 +3,7 @@
 /* eslint-disable prefer-destructuring */
 
 const expect = require('chai').expect
-const filters = require('../lib/filters')
+const filters = require('../../lib/filters')
 
 describe('Filters', () => {
   it('filter build', done => {

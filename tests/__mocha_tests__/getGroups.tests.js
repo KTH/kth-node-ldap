@@ -3,7 +3,7 @@
 /* eslint-disable prefer-destructuring */
 
 const expect = require('chai').expect
-const getGroups = require('../lib/utils/getGroups')
+const getGroups = require('../../lib/utils/getGroups')
 
 const ldapUserWithEmptyGroups = { memberOf: undefined }
 const ldapUserWithOneGroup = { memberOf: 'CN=app.testapp.user,OU=groups,OU=ug,DC=ref,DC=ug,DC=kth,DC=se' }
