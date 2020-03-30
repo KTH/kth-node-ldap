@@ -47,6 +47,10 @@ const queryPeterParker = {
   scope: 'sub',
   filter: '(mail=peter.parker@marvel.com)',
 }
+const queryNonExistentUser = {
+  scope: 'sub',
+  filter: '(mail=gone@nomore.com)',
+}
 const searchPeterParkerDN = 'ou=Users,o=5be4c382c583e54de6a3ff52,dc=jumpcloud,dc=com'
 
 /*
@@ -64,6 +68,9 @@ const mockUnbind = jest.fn().mockImplementation(async () => {
 })
 
 const mockSearch = jest.fn().mockImplementation(async (baseDN, searchOptions) => {
+  if (searchOptions.filter === queryNonExistentUser.filter) {
+    return { searchEntries: [] }
+  }
   if (searchOptions.sizeLimits === 1) {
     return { searchEntries: [peterParker] }
   }
@@ -117,7 +124,7 @@ describe(`LDAPTS tests`, () => {
     expect(client.client).toBeTruthy()
   })
 
-  test('Create client with  options to be passed as ldaptions to Client object ', async () => {
+  test('Create client with options to be passed as ldaptions to Client object ', async () => {
     const client = createClient(testOptions)
     expect(Client).toHaveBeenCalledTimes(1)
     expect(Client).toHaveBeenNthCalledWith(1, ldapOptions)
@@ -156,8 +163,28 @@ describe(`LDAPTS tests`, () => {
     expect(aResult).toEqual(peterParker)
     expect(mockUnbind).toHaveBeenCalled()
   })
+  test('Search one to return null when no user is found', async () => {
+    const query1 = {
+      ...queryNonExistentUser,
+      sizeLimits: 1,
+    }
+    let aClient
+    let aResult
 
-  test('Search  to return an array', async () => {
+    try {
+      aClient = await createClient(testOptions)
+      aResult = await searchOne(aClient, searchPeterParkerDN, queryNonExistentUser)
+    } catch (ex) {}
+
+    expect(mockBind).toHaveBeenNthCalledWith(1, testOptions.bindDN, testOptions.bindCredentials)
+    expect(mockSearch).toHaveBeenNthCalledWith(1, searchPeterParkerDN, query1)
+
+    expect(aResult).toBeFalsy()
+    expect(aResult).toEqual(null)
+    expect(mockUnbind).toHaveBeenCalled()
+  })
+
+  test('Search to return an array', async () => {
     const searchQuery = {
       paged: {
         pageSize: 1000,
