@@ -1,8 +1,9 @@
 {
   "name": "kth-node-ldap",
-  "version": "3.1.1",
+  "version": "4.0.0",
   "description": "Adds a Promise-based API on top of ldapjs as well as a filter builder.",
   "main": "index.js",
+  "automaticPublish": "true",
   "scripts": {
     "test:mocha": "mocha tests/__mocha_tests__/** --exit",
     "test": "is-ci \"test:jest\" \"test:watch\"",
@@ -30,30 +31,30 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "async": "^2.0.1",
-    "ldapjs": "^1.0.0",
-    "ldapts": "^2.2.0"
+    "async": "^3.2.0",
+    "ldapjs": "^2.1.1",
+    "ldapts": "^2.7.0"
   },
   "peerDependencies": {
-    "kth-node-log": "^3.0.1"
+    "kth-node-log": "^3.1.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "kth-node-log": "^3.0.1",
-    "mocha": "^6.2.0",
+    "kth-node-log": "^3.1.0",
+    "mocha": "^8.1.3",
     "mockery": "^2.1.0",
-    "husky": "^4.2.3",
-    "prettier": "^1.19.1",
-    "pretty-quick": "2.0.1",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.3",
-    "is-ci-cli": "^2.0.0",
-    "jest": "^24.9.0"
+    "husky": "^4.3.0",
+    "prettier": "^2.1.1",
+    "pretty-quick": "3.0.2",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "is-ci-cli": "^2.1.2",
+    "jest": "^26.4.2"
   },
   "prettier": {
     "trailingComma": "es5",
