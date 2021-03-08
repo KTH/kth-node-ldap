@@ -6,7 +6,7 @@
   "automaticPublish": "true",
   "scripts": {
     "test:mocha": "mocha tests/__mocha_tests__/** --exit",
-    "test": "is-ci \"test:jest\" \"test:watch\"",
+    "test": "is-ci-cli \"test:jest\" \"test:watch\"",
     "test:jest": "mocha tests/__mocha_tests__/** --exit && jest",
     "test:watch": "mocha tests/__mocha_tests__/** --exit && jest --watch",
     "postversion": "git push && git push --tags",
