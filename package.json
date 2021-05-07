@@ -11,7 +11,8 @@
     "test:watch": "mocha tests/__mocha_tests__/** --exit && jest --watch",
     "build": "./build.sh",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
-    "lint-v": "eslint \"**/*.{js,jsx}\" "
+    "lint-v": "eslint \"**/*.{js,jsx}\" ",
+    "prepare": "bash -c 'if [ -f ./node_modules/.bin/husky ]; then husky install; fi'"
   },
   "repository": {
     "type": "git",
@@ -35,15 +36,15 @@
     "ldapts": "^2.12.0"
   },
   "peerDependencies": {
-    "kth-node-log": "^3.1.4"
+    "kth-node-log": "^3.1.5"
   },
   "devDependencies": {
     "@kth/eslint-config-kth": "^1.0.10",
     "chai": "^4.3.4",
-    "eslint": "^7.24.0",
+    "eslint": "^7.25.0",
     "husky": "^6.0.0",
     "jest": "^26.6.3",
-    "kth-node-log": "^3.1.4",
+    "kth-node-log": "^3.1.5",
     "mocha": "^8.3.2",
     "mockery": "^2.1.0",
     "prettier": "^2.2.1",
