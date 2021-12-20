@@ -38,7 +38,7 @@ filter = F.orAll('givenName', ['a*', 'b*', 'c*'])
 // 3. combine for more complex filters
 filter = F.ne('givenName', 'f*').and(F.eq('familyName', 'g*'))
 
-co(function*() {
+co(function* () {
   var res = yield client.search('DC=ldap,DC=example,DC=com', {
     scope: 'sub',
     attributes: ['givenName', 'familyName', 'updatedOn'],
@@ -57,7 +57,7 @@ co(function*() {
   // all that's required is a function which returns a Promise
   // (co.wrap() does this for us)
   yield res.each(
-    co.wrap(function*(entry) {
+    co.wrap(function* (entry) {
       // do something with entry
       var user = {
         givenName: entry.object.givenName,
@@ -76,7 +76,7 @@ co(function*() {
   )
 
   client.close()
-}).catch(function(err) {
+}).catch(function (err) {
   console.error(err)
   process.exit(1)
 })
@@ -93,7 +93,7 @@ How to create client connection object and re-export relevant methods. In this e
 ```javascript
 const { createClient, search, searchOne } = require('kth-node-ldap')
 const config = require('../configuration').server
-const log = require('kth-node-log')
+const log = require('@kth/log')
 
 // ldap client is used to find users and need to be exposed
 const ldapClient = createClient({

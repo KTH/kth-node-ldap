@@ -18,7 +18,7 @@ const client = {
 
 const mockLogger = {}
 mockLogger.info = mockLogger.debug = mockLogger.error = () => {}
-mockery.registerMock('kth-node-log', mockLogger)
+mockery.registerMock('@kth/log', mockLogger)
 
 mockery.enable({
   warnOnUnregistered: false,
