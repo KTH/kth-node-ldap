@@ -31,7 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "async": "^3.2.4",
-    "ldapts": "^4.2.6"
+    "ldapts": "^6.0.0"
   },
   "peerDependencies": {
     "@kth/log": "^4.0.5"
