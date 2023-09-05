@@ -6,7 +6,7 @@
   "scripts": {
     "test:mocha": "mocha tests/__mocha_tests__/** --exit",
     "test": "mocha tests/__mocha_tests__/** --exit && jest",
-    "test:jest": "mocha tests/__mocha_tests__/** --exit && jest",
+    "test:jest": "jest",
     "test:watch": "mocha tests/__mocha_tests__/** --exit && jest --watch",
     "build": "./build.sh",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
