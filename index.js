@@ -1,5 +1,4 @@
-const { createClient, search, searchOne } =
-  process.env.USE_LDAPTS === 'true' ? require('./lib/ldapts/ldaptsClient') : require('./lib/ldap/client')
+const { createClient, search, searchOne } = require('./lib/ldapts/ldaptsClient')
 
 module.exports = {
   createClient,

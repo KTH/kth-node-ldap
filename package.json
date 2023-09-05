@@ -31,7 +31,6 @@
   "license": "MIT",
   "dependencies": {
     "async": "^3.2.4",
-    "ldapjs": "^2.3.3",
     "ldapts": "^2.12.0"
   },
   "peerDependencies": {
@@ -45,7 +44,6 @@
     "husky": "^7.0.4",
     "jest": "^27.5.1",
     "mocha": "^9.2.2",
-    "mockery": "^2.1.0",
     "prettier": "^2.8.8",
     "pretty-quick": "3.1.3"
   },
