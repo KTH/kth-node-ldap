@@ -2,7 +2,10 @@
   "name": "kth-node-ldap",
   "version": "4.0.11",
   "description": "Adds a Promise-based API on top of ldapjs as well as a filter builder.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test:mocha": "mocha tests/__mocha_tests__/** --exit",
     "test": "mocha tests/__mocha_tests__/** --exit && jest",
