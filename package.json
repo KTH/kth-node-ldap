@@ -33,7 +33,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "async": "^3.2.4",
     "ldapts": "^6.0.0"
   },
   "peerDependencies": {
