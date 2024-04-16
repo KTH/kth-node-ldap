@@ -13,7 +13,6 @@ const testOptions = {
   url: 'ldaps://ldap.jumpcloud.com',
   timeout: 1,
   connectTimeout: 2,
-  maxIdleTime: 3,
   tlsOptions: {
     minVersion: 'TLSv1.2',
   },
@@ -190,7 +189,8 @@ describe(`LDAPTS tests`, () => {
         pageSize: 1000,
         pagePause: true,
       },
-      ...(queryPeterParker && queryPeterParker.filter instanceof FilterBase && { filter: queryPeterParker.filter.build() }),
+      ...(queryPeterParker &&
+        queryPeterParker.filter instanceof FilterBase && { filter: queryPeterParker.filter.build() }),
       ...queryPeterParker,
     }
     let aClient

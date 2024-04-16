@@ -16,14 +16,8 @@ const ldapClient = createClient({
   url: config.ldap.uri,
   timeout: 30 * 60 * 1000,
   connectTimeout: config.ldap.connecttimeout,
-  maxConnections: config.ldap.maxconnections,
   bindDN: config.ldap.username,
   bindCredentials: config.ldap.password,
-  checkInterval: config.ldap.checkinterval,
-  maxIdleTime: config.ldap.maxidletime,
-  reconnectOnIdle: config.ldap.reconnectOnIdle,
-  reconnectTime: config.ldap.reconnectTime,
-  reconnect: true,
 })
 module.exports = {
   ldapClient,
