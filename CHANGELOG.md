@@ -1,6 +1,10 @@
 # Changelog
 
-## [5.0.0-next] - 2023-09-05
+## [5.3.0] - 2024-04-18
+
+Updated readme to remove some config that was never used.
+
+## [5.0.0] - 2023-09-05
 
 ### Breaking
 
