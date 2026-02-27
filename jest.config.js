@@ -1,4 +1,4 @@
 module.exports = {
   verbose: true,
-  testPathIgnorePatterns: ['/node_modules/', '/__mocha_tests__/'],
+  testPathIgnorePatterns: ['/node_modules/'],
 }

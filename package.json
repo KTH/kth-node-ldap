@@ -7,10 +7,8 @@
     "lib"
   ],
   "scripts": {
-    "test:mocha": "mocha tests/__mocha_tests__/** --exit",
-    "test": "mocha tests/__mocha_tests__/** --exit && jest",
-    "test:jest": "jest",
-    "test:watch": "mocha tests/__mocha_tests__/** --exit && jest --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "build": "./build.sh",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
     "lint-v": "eslint \"**/*.{js,jsx}\" ",
@@ -41,12 +39,10 @@
   "devDependencies": {
     "@kth/eslint-config-kth": "^3.7.0",
     "@kth/log": "^4.0.8",
-    "chai": "^4.5.0",
     "eslint": "^9.39.3",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
     "lint-staged": "^15.5.2",
-    "mocha": "^10.8.2",
     "prettier": "^3.8.1"
   },
   "prettier": {
