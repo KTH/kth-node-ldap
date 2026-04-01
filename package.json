@@ -39,7 +39,7 @@
   "devDependencies": {
     "@kth/eslint-config-kth": "^3.7.0",
     "@kth/log": "^4.0.8",
-    "eslint": "^9.39.3",
+    "eslint": "^10.1.0",
     "husky": "^9.1.7",
     "jest": "^30.2.0",
     "lint-staged": "^16.2.7",
