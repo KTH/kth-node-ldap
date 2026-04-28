@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.4.0] - 2026-04-28
+
+Update dependency ldapts to v8
+
 ## [5.3.0] - 2024-04-18
 
 Updated readme to remove some config that was never used.
