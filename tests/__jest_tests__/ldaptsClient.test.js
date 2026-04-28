@@ -1,7 +1,6 @@
 /* eslint no-multi-assign:0 */
 /* eslint no-empty:0 */
-const { Client } = require('ldapts')
-const { InvalidCredentialsError } = require('ldapts/errors')
+const { Client, InvalidCredentialsError } = require('ldapts')
 const { createClient, searchOne, search } = require('../../lib/ldapts/ldaptsClient')
 const FilterBase = require('../../lib/filters/filter-base')
 
@@ -77,6 +76,7 @@ const mockSearch = jest.fn().mockImplementation(async (baseDN, searchOptions) =>
 })
 
 jest.mock('ldapts', () => {
+  class MockInvalidCredentialsError extends Error {}
   return {
     Client: jest.fn().mockImplementation(options => {
       if (!options || !options.url) {
@@ -89,6 +89,7 @@ jest.mock('ldapts', () => {
       }
       return rval
     }),
+    InvalidCredentialsError: MockInvalidCredentialsError,
   }
 })
 
