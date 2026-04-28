@@ -11,4 +11,4 @@ updates:
       - dependabot
     ignore:
       - dependency-name: 'eslint'
-        versions: ['9.x']
+        versions: ['10']

@@ -10,8 +10,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "./build.sh",
-    "lint": "eslint \"**/*.{js,jsx}\" --quiet",
-    "lint-v": "eslint \"**/*.{js,jsx}\" ",
+    "lint": "eslint . --quiet",
+    "lint-v": "eslint .",
     "prepare": "husky"
   },
   "repository": {
@@ -37,7 +37,7 @@
     "@kth/log": "^4.0.5"
   },
   "devDependencies": {
-    "@kth/eslint-config-kth": "^3.7.0",
+    "@kth/eslint-config-kth": "^4.0.0",
     "@kth/log": "^4.0.8",
     "eslint": "^9.39.4",
     "husky": "^9.1.7",
