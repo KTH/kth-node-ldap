@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.0.0]
+
+Update dependency `ldapts` to v9
+
 ## [5.4.0] - 2026-04-28
 
 Update dependency ldapts to v8
